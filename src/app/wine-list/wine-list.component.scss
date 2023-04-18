@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+  }
+tr{
+  &:hover{
+  background-color: rgb(236, 236, 236);
+}}
+th, td{
+  overflow: hidden;
+  width: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  
+}
+.mat-column-id{
+  width: 63px;
+}
+
+.mat-column-name{
+  width: 200px;
+}
+
+.mat-column-year{
+  width: 80px;
+}
+
+.mat-column-price{
+  width: 80px;
+}
+
+

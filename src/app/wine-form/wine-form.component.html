@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-8">
+      <h4 class="mb-3">Add new bottle</h4>
+      <form [formGroup]="wineForm" (ngSubmit)="save()" class="needs-validation" novalidate="">
+        <div class="row g-3">
+          <div class="col-sm-9">
+            <input type="hidden" name="id">
+            <label for="wine" class="form-label">Wine name </label>
+            <input 
+              formControlName="name" 
+              type="text" 
+              class="form-control" 
+              id="name" 
+              name="name"
+              required 
+              >
+          </div>
+          <div class="col-sm-3">
+            <label for="year" class="form-label">Year</label>
+            <input 
+              formControlName="year" 
+              id="year" 
+              name="year" 
+              type="number" 
+              class="form-control" 
+              min="1900" 
+              max="2099" 
+              step="1"
+              value="2023"
+              required 
+              >
+          </div>
+          <div class="col-12">
+            <label for="notes" class="form-label">Notes <span class="text-body-secondary">(Optional)</span></label>
+            <textarea formControlName="notes" class="form-control" id="notes" name="notes" rows="3"></textarea>
+          </div>
+          <div class="col-6">
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text">€</span>
+              <input formControlName="price" type="text" class="form-control" id="price" name="price" required>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="numberOfBottles" class="form-label">Number of bottles</label>
+            <input formControlName="numberOfBottles" type="number" class="form-control" id="numberOfBottles" name="numberOfBottles" value="1" step="1"
+              required>
+          </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-primary btn-lg" (ngSubmit)="save()">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
